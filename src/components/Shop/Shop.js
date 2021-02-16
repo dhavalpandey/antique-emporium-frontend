@@ -83,7 +83,7 @@ useEffect(() => {
         </CardContent>
         </CardActionArea>
         <CardActions>
-        <Button variant="contained" color="primary" href={`http://localhost:5000/${product._id}`}>
+        <Button variant="contained" color="primary" href={`https://antique-emporium.netlify.app/${product._id}`}>
             View
         </Button>
         </CardActions>
