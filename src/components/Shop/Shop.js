@@ -63,7 +63,7 @@ useEffect(() => {
         var date = new Date(product.date);
         var newDate = date.toLocaleDateString()
 
-        return <div className="item">
+        return <div key={index} className="item">
         <Card className={classes.root} key={product._id}>
         <CardActionArea>
         <LazyLoadImage
