@@ -1,0 +1,2 @@
+(this["webpackJsonpAntique-Emporium"]=this["webpackJsonpAntique-Emporium"]||[]).push([[14],{120:function(e,t,n){},162:function(e,t,n){"use strict";n.r(t);n(0),n(120);var c=n(2);t.default=function(){return Object(c.jsx)(c.Fragment,{children:Object(c.jsxs)("h1",{className:"header",children:[Object(c.jsx)("h1",{children:"Upload product"}),Object(c.jsxs)("form",{onSubmit:!0,children:[Object(c.jsx)("label",{children:"Title"}),Object(c.jsx)("input",{onChange:!0,type:"text"})]})]})})}}}]);
+//# sourceMappingURL=14.8507ddee.chunk.js.map

@@ -1,6 +1,7 @@
 import './App.scss';
-import React, { Component, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 //Components
 const Signup = React.lazy(() => import('./components/Signup/Signup'));
@@ -10,14 +11,16 @@ const Shop = React.lazy(() => import('./components/Shop/Shop'));
 const Pay = React.lazy(() => import('./components/Pay/Pay'));
 const View = React.lazy(() => import('./components/View/View'));
 
-// import NavBar from './components/NavBar/Navbar';
-
 const App = () => {
   return (
+    <>
     <div className="app">
     <Router>
       <Switch>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={
+        <>
+        <div className="load">Loading...</div><CircularProgress className="load"/>
+        </>}>
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/shop" component={Shop} />
         <Route exact path="/login" component={Login} />
@@ -28,6 +31,8 @@ const App = () => {
         </Switch>
     </Router>
     </div>
+    </>
   );
 }
+
 export default App;

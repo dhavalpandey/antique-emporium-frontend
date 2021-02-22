@@ -42,6 +42,7 @@ export default function View() {
     }
     
     return (
+        <>
         <div>
             <Tooltip
             disableFocusListener
@@ -52,5 +53,6 @@ export default function View() {
         </Tooltip>
           <p>{myData.price}</p>
         </div>
+        </>
     )
 }

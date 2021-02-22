@@ -44,7 +44,6 @@ class Signup extends Component {
   }
 
   submit() {
-    // this.refs.btn.setAttribute("disabled", "disabled");
     fetch(URL+'/signup', {
       method: 'POST',
       headers: {

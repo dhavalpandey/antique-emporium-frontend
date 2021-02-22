@@ -55,6 +55,7 @@ function Login() {
       event.preventDefault();
     };
   return (
+    <>
       <form className="login" method="POST" action="https://antique-emporium-backend.herokuapp.com/login">
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
@@ -92,6 +93,7 @@ function Login() {
   <button type="submit" className="button">Log in</button>
 </div>
 </form>
+</>
   );
 }
 export default Login;

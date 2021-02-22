@@ -1,2 +1,0 @@
-(this.webpackJsonpviews=this.webpackJsonpviews||[]).push([[13],{103:function(e,t,s){},155:function(e,t,s){"use strict";s.r(t);s(0),s(103);var c=s(3);t.default=function(){return Object(c.jsxs)("h1",{className:"header",children:[Object(c.jsx)("h1",{children:"Upload product"}),Object(c.jsxs)("form",{onSubmit:!0,children:[Object(c.jsx)("label",{children:"Title"}),Object(c.jsx)("input",{onChange:!0,type:"text"})]})]})}}}]);
-//# sourceMappingURL=13.ca7ace11.chunk.js.map

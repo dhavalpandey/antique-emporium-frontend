@@ -68,6 +68,7 @@ const MainScreen = () => {
     }, []);
 
     return (
+        <>
         <div className="wrapper">
             {stripePromise
                     ? <Elements stripe={stripePromise}>
@@ -99,6 +100,7 @@ const MainScreen = () => {
                     : null
                 }
     </div>
+    </>
     );
 };
 

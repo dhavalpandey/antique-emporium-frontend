@@ -64,6 +64,7 @@ useEffect(() => {
         var newDate = date.toLocaleDateString()
 
         return <div key={index} className="item">
+            <>
         <Card className={classes.root} key={product._id}>
         <CardActionArea>
         <LazyLoadImage
@@ -88,6 +89,7 @@ useEffect(() => {
         </Button>
         </CardActions>
         </Card>
+        </>
         </div>
     })
 

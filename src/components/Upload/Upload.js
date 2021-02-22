@@ -3,6 +3,7 @@ import './Upload.css';
 
 const Upload = () => {
     return (
+        <>
         <h1 className="header">
             <h1>Upload product</h1>
 
@@ -12,6 +13,7 @@ const Upload = () => {
                 
             </form>
         </h1>
+        </>
     )
 }
 
