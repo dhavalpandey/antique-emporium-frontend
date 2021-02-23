@@ -43,8 +43,8 @@ class Signup extends Component {
     })
   }
 
-  submit() {
-    fetch(URL+'/signup', {
+  async submit() {
+    await fetch(URL+'/signup', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

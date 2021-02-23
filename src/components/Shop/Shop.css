@@ -1,8 +1,6 @@
 .container {
+    justify-content: center;
+    align-items: center;
     display: flex; /* or inline-flex */
-        flex-direction: column-reverse;
-  }
-
-  .item {
-    flex-grow: 4; /* default 0 */
+    flex-flow: wrap;
   }

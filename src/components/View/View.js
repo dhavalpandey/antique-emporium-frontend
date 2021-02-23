@@ -25,8 +25,8 @@ export default function View() {
         getProducts();
 }, [])
 
-    const getProducts = (variables) => {
-        fetch(URL+'/api/'+id, {
+    const getProducts = async (variables) => {
+        await fetch(URL+'/api/'+id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

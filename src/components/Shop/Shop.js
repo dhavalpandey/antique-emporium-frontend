@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import URL from '../../config/config'
+import URL from '../../config/config';
+import NavBar from '../NavBar/Navbar'
 
 //Lazy Load
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -14,13 +15,32 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './Shop.css'
 
 const useStyles = makeStyles({
     root: {
-      width: 320,
+        margin: 25,
+        overflow: "hidden",
+        width: 320,
+        height: 430
     },
+    desc: {
+        overflow: "hidden",
+        width: 300,
+        height: 80
+    },
+    img: {
+        marginTop: 7,
+        resizeMode: 'contain',
+        marginLeft: 10,
+    },
+    head: {
+        maxHeight: 30,
+        overflow: "hidden"
+    }
   });
   
   const productionURL = 'http://localhost:5000/'
@@ -41,8 +61,8 @@ useEffect(() => {
         getProducts(variables);
 }, [])
 
-    const getProducts = (variables) => {
-        fetch(URL+'/api/products', {
+    const getProducts = async (variables) => {
+        await fetch(URL+'/api/products', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -52,7 +72,6 @@ useEffect(() => {
             return res.json()
         }).then(function(data) {
             dataReturn = data;
-            console.log(dataReturn)
             setProducts(data)
         }).catch(function(error) {
             console.error(error)
@@ -68,23 +87,25 @@ useEffect(() => {
         <Card className={classes.root} key={product._id}>
         <CardActionArea>
         <LazyLoadImage
+                    className={classes.img}
                     alt={`${product._id}`}
                     src={`${product.imageUrl}`}
-                    width={200}
+                    width={300}
+                    height={180}
                     effect="blur" />
         <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography className={classes.head} gutterBottom variant="h5" component="h2">
             {product.name}
-            </Typography>
+            </Typography><p>{newDate}</p>
             <LazyLoad once={true} >
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" className={classes.desc} color="textSecondary" component="p">
             {product.description}
             </Typography>
             </LazyLoad>
         </CardContent>
         </CardActionArea>
         <CardActions>
-        <Button variant="contained" color="primary" href={`https://antique-emporium.netlify.app/${product._id}`}>
+        <Button variant="contained" color="primary" href={`/${product._id}`}>
             View
         </Button>
         </CardActions>
@@ -94,11 +115,12 @@ useEffect(() => {
     })
 
     return (
+        <>
        <div className="shopping-page">
            <h1>Shop</h1>
            {Products.length === 0 ?
                 <div style={{ display: 'flex', height: '300px', justifyContent: 'center', alignItems: 'center' }}>
-                    <h2>Loading...</h2>
+                    <h2>Loading...    <CircularProgress /></h2>
                 </div> :
                 <div>
                     <div className="container">
@@ -111,6 +133,7 @@ useEffect(() => {
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                 </div>
        </div>
+       </>
     )
 }
 

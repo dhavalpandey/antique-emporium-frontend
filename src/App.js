@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 //Components
@@ -10,6 +10,7 @@ const Login = React.lazy(() => import('./components/Login/Login'));
 const Shop = React.lazy(() => import('./components/Shop/Shop'));
 const Pay = React.lazy(() => import('./components/Pay/Pay'));
 const View = React.lazy(() => import('./components/View/View'));
+// const error404 = React.lazy(() => import('./components/404/404'));
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         </>}>
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/shop" component={Shop} />
+        <Route exact path="/" component={Shop} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/pay" component={Pay} />

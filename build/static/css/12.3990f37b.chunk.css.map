@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/Login/Login.css"],"names":[],"mappings":"AAAA,KACI,wBAAyB,CACzB,4DACJ","file":"12.3990f37b.chunk.css","sourcesContent":["body {\n    background-color: #eec0c6;\n    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);\n}"]}

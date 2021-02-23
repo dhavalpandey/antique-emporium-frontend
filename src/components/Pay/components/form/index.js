@@ -46,7 +46,7 @@ export default function CForm({
 }) {
     const [cardNumber, setCardNumber] = useState('');
     const onlyAlphanumericRegex = /[^a-z0-9]/gi;
-    const regex = /^[a-zA-Z\s]*$/
+    const regex = /^[a-zA-Z\s]*$/;
     const CHARACTER_LIMIT = 19;
     const [values, setValues] = React.useState({
       name: "Hello"

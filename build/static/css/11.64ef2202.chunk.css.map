@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/Shop/Shop.css"],"names":[],"mappings":"AAAA,WACI,YAAa,CACT,6BACN,CAEA,MACE,WACF","file":"11.64ef2202.chunk.css","sourcesContent":[".container {\n    display: flex; /* or inline-flex */\n        flex-direction: column-reverse;\n  }\n\n  .item {\n    flex-grow: 4; /* default 0 */\n  }"]}
