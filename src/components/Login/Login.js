@@ -41,6 +41,7 @@ function Login() {
       weight: '',
       weightRange: '',
       showPassword: false,
+      email: ''
     });
   
     const handleChange = (prop) => (event) => {
@@ -54,15 +55,42 @@ function Login() {
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
     };
+
+    const handleFormSubmit = () => {
+      fetch("https://antique-emporium-backend.herokuapp.com/login", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: values.email,
+          password: values.password
+        })
+    }).then(function(res) {
+        return res.json()
+    }).then(function(data) {
+      if(data.status == "OK") {
+        localStorage.setItem("token", data.data)
+        alert("Login was succusfull!");
+        window.location.replace("/");
+      } else {
+        alert("Your credentials were wrong :(. Please try again!")
+        window.location.reload();
+      }
+    }).catch(function(error) {
+        console.error(error)
+    })
+    }
   return (
     <>
-      <form className="login" method="POST" action="https://antique-emporium-backend.herokuapp.com/login">
+      <div className="login">
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
             <AccountCircle />
           </Grid>
           <Grid item>
-            <TextField type="email" id="input-with-icon-grid" label="Email:" placeholder="Email" required name="email" />
+            <TextField type="email" id="input-with-icon-grid" onChange={handleChange('email')} name="email" label="Email:" placeholder="Email" required name="email" />
           </Grid>
         </Grid>
         <FormControl className={clsx(classes.margin, classes.textField)}>
@@ -88,11 +116,10 @@ function Login() {
             }
           />
         </FormControl>
-
       <div className="wrap">
-  <button type="submit" className="button">Log in</button>
+  <button onClick={handleFormSubmit} type="submit" className="button">Log in</button>
 </div>
-</form>
+</div>
 </>
   );
 }

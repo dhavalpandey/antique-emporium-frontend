@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import URL from '../../config/config'
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
     useParams
   } from "react-router-dom";
 
@@ -25,7 +22,7 @@ export default function View() {
         getProducts();
 }, [])
 
-    const getProducts = async (variables) => {
+    const getProducts = async () => {
         await fetch(URL+'/api/'+id, {
             method: 'GET',
             headers: {

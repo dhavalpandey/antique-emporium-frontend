@@ -67,8 +67,8 @@ const MainScreen = () => {
         setCurrentFocusedElm(null);
     }, []);
 
+    if(localStorage.getItem('token')) {
     return (
-        <>
         <div className="wrapper">
             {stripePromise
                     ? <Elements stripe={stripePromise}>
@@ -100,8 +100,10 @@ const MainScreen = () => {
                     : null
                 }
     </div>
-    </>
-    );
+        );
+    } else {
+        window.location.replace("/login")
+    }
 };
 
 export default MainScreen;

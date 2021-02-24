@@ -10,7 +10,7 @@ const Login = React.lazy(() => import('./components/Login/Login'));
 const Shop = React.lazy(() => import('./components/Shop/Shop'));
 const Pay = React.lazy(() => import('./components/Pay/Pay'));
 const View = React.lazy(() => import('./components/View/View'));
-// const error404 = React.lazy(() => import('./components/404/404'));
+const Admin = React.lazy(() => import('./components/Admin/Admin'));
 
 const App = () => {
   return (
@@ -23,12 +23,13 @@ const App = () => {
         <div className="load">Loading...</div><CircularProgress className="load"/>
         </>}>
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/admin" component={Admin} />
         <Route exact path="/shop" component={Shop} />
         <Route exact path="/" component={Shop} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/pay" component={Pay} />
-        <Route exact path="/:id" name="id" component={View}/>
+        <Route exact path="/product/:id" name="id" component={View}/>
         </Suspense>
         </Switch>
     </Router>
