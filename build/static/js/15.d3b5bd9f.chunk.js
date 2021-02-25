@@ -1,2 +1,0 @@
-(this["webpackJsonpantique-emporium"]=this["webpackJsonpantique-emporium"]||[]).push([[15],{170:function(e,t,n){},245:function(e,t,n){"use strict";n.r(t);n(0),n(170);var c=n(2);t.default=function(){return Object(c.jsx)(c.Fragment,{children:Object(c.jsxs)("h1",{className:"header",children:[Object(c.jsx)("h1",{children:"Upload product"}),Object(c.jsxs)("form",{onSubmit:!0,children:[Object(c.jsx)("label",{children:"Title"}),Object(c.jsx)("input",{onChange:!0,type:"text"})]})]})})}}}]);
-//# sourceMappingURL=15.d3b5bd9f.chunk.js.map

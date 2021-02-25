@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from 'react-service-worker';
+
+const appSW = registerServiceWorker()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App appServiceWorker={appSW}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -16,4 +18,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-registerServiceWorker();
