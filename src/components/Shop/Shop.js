@@ -105,7 +105,7 @@ useEffect(() => {
         </CardContent>
         </CardActionArea>
         <CardActions>
-        <Button variant="contained" color="primary" href={`/${product._id}`}>
+        <Button variant="contained" color="primary" href={`product/${product._id}`}>
             View
         </Button>
         </CardActions>
