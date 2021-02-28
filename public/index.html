@@ -92,7 +92,7 @@ let api = fetch('https://api.ipify.org/?format=json')
   const consoleWarning = () => { 
   console.log('%c%s','color: red; font-size: 70px; font-family: "Poppins", sans-serif;','Stop!'); 
   console.log('%c%s','color: black; font-size: 18px; font-family: "Montserrat", sans-serif;','This console is only intended for our developers. Any activity in this console - so called "hacks" - will be tracked and will have action taken against it. If you choose to manipulate the website via the console, there will be severe consequences against you. Please do not use the console for any purposes.'); 
-  console.log("You are currently using a ", getDeviceType, ". Your current IP address is the following: ", ipAddress);
+  console.log("You are currently using a ", getDeviceType(), ". Your current IP address is the following: ", ipAddress());
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
