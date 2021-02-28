@@ -95,6 +95,9 @@ let api = fetch('https://api.ipify.org/?format=json')
   console.log("You are currently using a ", getDeviceType, ". Your current IP address is the following: ", ipAddress);
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    consoleWarning();
+});
 
 </script>
   </body>
