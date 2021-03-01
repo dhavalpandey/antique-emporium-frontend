@@ -5,11 +5,14 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
+import { useHistory } from "react-router-dom";
+
 function RightMenu(props) {
+  const history = useHistory()
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="logout">
-          <a onClick={() => console.log("Logged out")}>Logout</a>
+          <a onClick={() => history.push("/login")}>Login</a>
         </Menu.Item>
       </Menu>
     )

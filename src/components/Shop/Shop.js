@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
 import URL from '../../config/config';
-import NavBar from '../NavBar/Navbar'
+import NavBar from '../NavBar/Navbar';
 
 //Lazy Load
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -46,6 +47,8 @@ const useStyles = makeStyles({
   const productionURL = 'http://localhost:5000/'
 
 function Shop() {
+    const history = useHistory();
+
     const [Products, setProducts] = useState([])
     const [Skip, setSkip] = useState(0)
     const [Limit, setLimit] = useState(4)
@@ -105,7 +108,8 @@ useEffect(() => {
         </CardContent>
         </CardActionArea>
         <CardActions>
-        <Button variant="contained" color="primary" href={`product/${product._id}`}>
+            {/*{`/product/${product._id}`}}*/}
+        <Button variant="contained" color="primary" onClick={() => history.push(`/product/${product._id}`)} >
             View
         </Button>
         </CardActions>
@@ -116,6 +120,9 @@ useEffect(() => {
 
     return (
         <>
+        <div className="navbar">
+            <NavBar />
+        </div>
        <div className="shopping-page">
            <h1>Shop</h1>
            {Products.length === 0 ?

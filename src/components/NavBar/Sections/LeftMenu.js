@@ -1,13 +1,17 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { useHistory } from "react-router-dom";
+
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 function LeftMenu(props) {
+  const history = useHistory()
+
   return (
     <Menu mode={props.mode}>
     <Menu.Item key="mail">
-      <a href="/">Home</a>
+      <a onClick={() => history.push(`/`)}>Home</a>
     </Menu.Item>
     <SubMenu title={<span>Blogs</span>}>
       <MenuItemGroup title="Item 1">
