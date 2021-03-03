@@ -67,37 +67,37 @@
 
 <!-- console warning. DO NOT CHANGE -->
 <script>
-  const getDeviceType = () => {
-  const ua = navigator.userAgent;
-  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-    return "tablet";
-  }
-  if (
-    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
-      ua
-    )
-  ) {
-    return "mobile";
-  }
-  return "desktop";
-};
+//   const getDeviceType = () => {
+//   const ua = navigator.userAgent;
+//   if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+//     return "tablet";
+//   }
+//   if (
+//     /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+//       ua
+//     )
+//   ) {
+//     return "mobile";
+//   }
+//   return "desktop";
+// };
 
-let ipAddress;
-let api = fetch('https://api.ipify.org/?format=json')
-.then(results => results.json())
-.then(result => {
-    ipAddress = result.ip;
-   })
+// let ipAddress;
+// let api = fetch('https://api.ipify.org/?format=json')
+// .then(results => results.json())
+// .then(result => {
+//     ipAddress = result.ip;
+//    })
 
-  const consoleWarning = () => { 
-  console.log('%c%s','color: red; font-size: 70px; font-family: "Poppins", sans-serif;','Stop!'); 
-  console.log('%c%s','color: black; font-size: 18px; font-family: "Montserrat", sans-serif;','This console is only intended for our developers. Any activity in this console - so called "hacks" - will be tracked and will have action taken against it. If you choose to manipulate the website via the console, there will be severe consequences against you. Please do not use the console for any purposes.'); 
-  console.log("You are currently using a ", getDeviceType(), ". Your current IP address is the following: ", ipAddress());
-}
+//   const consoleWarning = () => { 
+//   console.log('%c%s','color: red; font-size: 70px; font-family: "Poppins", sans-serif;','Stop!'); 
+//   console.log('%c%s','color: black; font-size: 18px; font-family: "Montserrat", sans-serif;','This console is only intended for our developers. Any activity in this console - so called "hacks" - will be tracked and will have action taken against it. If you choose to manipulate the website via the console, there will be severe consequences against you. Please do not use the console for any purposes.'); 
+//   console.log("You are currently using a ", getDeviceType(), ". Your current IP address is the following: ", ipAddress());
+// }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    consoleWarning();
-});
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     consoleWarning();
+// });
 
 </script>
   </body>
